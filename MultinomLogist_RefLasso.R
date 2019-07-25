@@ -1,5 +1,5 @@
 
-MultinomLogist_RefLasso <- function(X,Y,intercept=intercept,version_cpp=FALSE, method=c("BIC","BIC-H","CV")){
+MultinomLogist_RefLasso <- function(X,Y,intercept=FALSE,version_cpp=FALSE, method=c("BIC","BIC-H","CV")){
   K=max(Y)
   BIC=BIC_H=CV=NULL
   if("BIC" %in% method || "BIC-H" %in% method){  
