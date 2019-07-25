@@ -1,4 +1,4 @@
-MultinomLogist_SymLasso <- function(X,Y,intercept=intercept, method=c("BIC","BIC-H","CV")){
+MultinomLogist_SymLasso <- function(X,Y,intercept=FALSE, method=c("BIC","BIC-H","CV")){
   K=max(Y)
   BIC=BIC_H=CV=NULL
   if("BIC" %in% method || "BIC-H" %in% method){  
@@ -97,7 +97,7 @@ estimations_glmnet=function(X,Y,family="multinomial",intercept=FALSE,hybride=FAL
 
 
 # Regression logistique multinomiale penalise par le package glmnet par un critere de cross validation
-# qui sélectionne le lambda qui donne la moyenne de vraisemblance la plus grande
+# qui sÃ©lectionne le lambda qui donne la moyenne de vraisemblance la plus grande
 ## Entree
 # X : matrice de taille n (nombre observations) * p (nombre de variables)
 # Y : vecteur numerique ou facteur a K valeurs differentes
