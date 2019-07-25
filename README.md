@@ -24,7 +24,7 @@ glmnet, Matrix and Rcpp.
 #### Arguments
 * **X**        : Input matrix, of dimension n x p, where n is the number of observations and p is the number of variables; each row is an observation vector.  
 * **Y**        : Numerical or factorial vector at K different values. For the MultinomLogist_RefLasso method, the reference is chosen as the first level (i.e. levels (factor (Y)) [1]).
-* **intercept**    : Vector defining the pairs; each pair composed by a case and his matched control.  
+* **intercept**    : Logical. Should an intercept be included in the model - default is FALSE.  
 * **method**        : Character string, specifies the tuning parameter selection method to be used. Choices are "BIC", "BIC-H" and/or "CV".  
 "BIC" :  specifies the **B**ayesian **I**nformation **C**riterion;  
 "BIC-H":  specifies the **B**ayesian **I**nformation **C**riterion **H**ybrid;  
