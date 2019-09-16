@@ -1,7 +1,7 @@
 # L1MLR
 ## L1-penalized multinomial logistic regression models for unmatched case control studies
 
-Methods MultinomLogist_StdLasso and MultinomLogist_SymLasso, developped by Ballout, Garcia and Viallon *, are used to estimate L1-penalized multinomial logistic regression models for unmatched case control studies. Functions corresponding to these methods are available in MultinomLogist_StdLasso.R and MultinomLogist_SymLasso respectively).
+Methods MultinomLogist_StdLasso and MultinomLogist_SymLasso, developped by Ballout, Garcia and Viallon [1], are used to estimate L1-penalized multinomial logistic regression models for unmatched case control studies. Functions corresponding to these methods are available in MultinomLogist_StdLasso.R and MultinomLogist_SymLasso respectively).
 
 **MultinomLogist_StdLasso** returns estimates using the standard parametrization based on a a priori selection of a reference category.
 
