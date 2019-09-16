@@ -20,17 +20,18 @@ glmnet, Matrix and Rcpp.
 
 
 ## Usage
-##### MultinomLogist_RefLasso and MultinomLogist_SymLasso
+##### MultinomLogist_StdLasso and MultinomLogist_SymLasso
 #### Arguments
 * **X**        : Input matrix, of dimension n x p, where n is the number of observations and p is the number of variables; each row is an observation vector.  
-* **Y**        : Numerical or factorial vector at K different values. For the MultinomLogist_RefLasso method, the reference is chosen as the first level (i.e. levels (factor (Y)) [1]).
+* **Y**        : Numerical or factorial vector at K different values. For the MultinomLogist_StdLasso method, the 
+erence is chosen as the first level (i.e. levels (factor (Y)) [1]).
 * **intercept**    : Logical. Should an intercept be included in the model - default is FALSE.  
 * **method**        : Character string, specifies the tuning parameter selection method to be used. Choices are "BIC", "BIC-H" and/or "CV".  
 "BIC" :  specifies the **B**ayesian **I**nformation **C**riterion;  
 "BIC-H":  specifies the **B**ayesian **I**nformation **C**riterion, adapting the Hybrid-OLS idea (Efron and others 2004) [2];  
 "CV"  :  specifies the **C**ross **V**alidation technique;  
 
-* **version_cpp**      : This is for the "CondLogist_RefLasso" method. If TRUE, performs the iterative algorithm with a function using the Cpp language. This makes the function faster - default is FALSE.
+* **version_cpp**      : This is for the "MultinomLogist_StdLasso" method. If TRUE, performs the iterative algorithm with a function using the Cpp language. This makes the function faster - default is FALSE.
 
 #### Value
 * **BIC**         : Matrix of parameters obtained for the lambda value that minimizes the BIC.    
