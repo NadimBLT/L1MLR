@@ -45,7 +45,7 @@ erence is chosen as the first level (i.e. levels (factor (Y)) [1]).
 
 ## References
 
-[1] Ballout, Nadim, Garcia, Cedric, et Viallon, Vivian. Sparse estimation for case-control studies with multiple subtypes of cases. arXiv preprint arXiv:1901.01583, 2019.
+[1] Ballout, Nadim; Garcia, Cedric; Viallon, Vivian. Sparse estimation for case-control studies with multiple subtypes of cases. arXiv preprint arXiv:1901.01583, 2019.
 
 [2] Efron, Bradley; Hastie, Trevor; Johnstone, Iain; Tibshirani, Robert. Least angle regression. Ann. Statist. 32 (2004), no. 2, 407--499.
 
