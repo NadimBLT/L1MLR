@@ -1,11 +1,11 @@
-path_repository="C://Users/NADIM.B/Desktop/GitHubN - Copy/"
+path_repository="~"
 
 library(Rcpp)
 library(glmnet)
 library(Matrix)
 
-sourceCpp(paste0(path_repository,"MultinomLogist_RefLasso_rcpp.cpp"))
-source(paste0(path_repository,"MultinomLogist_RefLasso.R"))
+sourceCpp(paste0(path_repository,"MultinomLogist_StdLasso_rcpp.cpp"))
+source(paste0(path_repository,"MultinomLogist_StdLasso.R"))
 source(paste0(path_repository,"MultinomLogist_SymLasso.R"))
 
 load(paste0(path_repository,"/DataEx.Rdata"))
@@ -18,21 +18,21 @@ True_Models
 head(X)
 head(Y)
 
-#RES_RefLasso       = MultinomLogist_RefLasso    (X,Y,intercept=TRUE, method=c("BIC","BIC-H"),version_cpp=FALSE)
+#RES_StdLasso       = MultinomLogist_StdLasso    (X,Y,intercept=TRUE, method=c("BIC","BIC-H"),version_cpp=FALSE)
 #RES_SymLasso       = MultinomLogist_SymLasso    (X,Y,intercept=TRUE, method=c("BIC","BIC-H"))
 
 load(paste0(path_repository,"ResEx.Rdata"))
 
 # Comparing the estimated models with the true models
 
-ALL = cbind(True_Models,RES_SymLasso$BIC_H[-1,],RES_RefLasso$BIC_H[-1,])
-#ALL = cbind(True_Models,RES_SymLasso$BIC[-1,],RES_RefLasso$BIC[-1,])
+ALL = cbind(True_Models,RES_SymLasso$BIC_H[-1,],RES_StdLasso$BIC_H[-1,])
+#ALL = cbind(True_Models,RES_SymLasso$BIC[-1,],RES_StdLasso$BIC[-1,])
 
 #ALL[which(ALL>6)]=6
 #ALL[which(ALL< -6)]=-6
-RES_DataFrame = data.frame(DELTA=as.numeric(ALL), METH=rep(c("TRUE", "MultinomLogist_SymLasso", "MultinomLogist_RefLasso"), each=20*6), VAR=rep(paste0("Var_",1:20), 3*6), STRAT=  rep(rep(paste0("Cat_",1:6), each=20), 3))
+RES_DataFrame = data.frame(DELTA=as.numeric(ALL), METH=rep(c("TRUE", "MultinomLogist_SymLasso", "MultinomLogist_StdLasso"), each=20*6), VAR=rep(paste0("Var_",1:20), 3*6), STRAT=  rep(rep(paste0("Cat_",1:6), each=20), 3))
 RES_DataFrame$VAR=factor(RES_DataFrame$VAR,levels = paste0("Var_",1:20))
-RES_DataFrame$METH=factor(RES_DataFrame$METH,levels = c("TRUE", "MultinomLogist_SymLasso", "MultinomLogist_RefLasso"),labels = c("TRUE","SymLasso","RefLasso"))
+RES_DataFrame$METH=factor(RES_DataFrame$METH,levels = c("TRUE", "MultinomLogist_SymLasso", "MultinomLogist_StdLasso"),labels = c("TRUE","SymLasso","StdLasso"))
 
 
 library(ggplot2)
